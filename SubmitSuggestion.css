@@ -1,0 +1,249 @@
+/* Submit Suggestion Page Styling */
+.submit-suggestion-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+  }
+  
+  /* Header */
+  .submit-suggestion-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 3px solid rgb(255, 208, 0);
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  
+  .submit-suggestion-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000080;
+  }
+  
+  /* Sidebar */
+  .submit-suggestion-sidebar {
+    width: 256px;
+    background-color: white;
+    border-right: 1px solid #e5e7eb;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    padding: 1rem;
+    z-index: 5;
+  }
+  
+  .submit-suggestion-sidebar.closed {
+    width: 0;
+    overflow: hidden;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #000080;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav-link:hover {
+    background-color: rgb(255, 208, 0);
+    font-weight: bold;
+  }
+  
+  .nav-link.active {
+    background-color: rgb(255, 208, 0);
+    color: #000080;
+    font-weight: bold;
+  }
+  
+  /* Main Content */
+  .submit-suggestion-main-content {
+    margin-left: 500px;
+    margin-top: 80px;
+    padding: 2rem;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    color: #000057;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Form Styles */
+  .submit-suggestion-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    width: 92%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background-color: #000057;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #000066;
+  }
+  
+  button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+  }
+  
+  /* Agreement Checkbox */
+  .submit-suggestion-agreement-label {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-weight: normal;
+  }
+  
+  .submit-suggestion-agreement-label input {
+    margin-right: 10px;
+  }
+
+  /* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
+  /* General Adjustments */
+  .submit-suggestion-page {
+    padding: 0 1rem;
+    background-color: #f9f9f9; /* Light background for better readability */
+  }
+
+  /* Header */
+  .submit-suggestion-header {
+    padding: 10px;
+    flex-wrap: wrap; /* Allow content to wrap */
+    text-align: center;
+  }
+
+  .submit-suggestion-logo {
+    width: 40px; /* Smaller logo */
+    height: 40px;
+    margin: 0 auto 10px; /* Center logo */
+  }
+
+  h1 {
+    font-size: 1.25rem; /* Adjust font size for header */
+  }
+
+  /* Sidebar */
+  .submit-suggestion-sidebar {
+    width: 70%; /* Sidebar width adjusts to 70% */
+    position: fixed;
+    left: -100%; /* Hidden by default */
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+  }
+
+  .submit-suggestion-sidebar.open {
+    left: 0; /* Sidebar slides in */
+  }
+
+  .nav-link {
+    font-size: 1rem; /* Increase link readability */
+    padding: 0.5rem; /* Compact padding */
+  }
+
+  /* Main Content */
+  .submit-suggestion-main-content {
+    margin: 0 auto; /* Center align */
+    margin-top: 120px; /* Add spacing for fixed header */
+    padding: 1.5rem; /* Compact padding */
+    width: 100%; /* Full width on smaller screens */
+    box-shadow: none; /* Remove shadow for a cleaner look */
+    background-color: transparent; /* Transparent for mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust heading size */
+    margin-bottom: 1rem;
+  }
+
+  /* Form Adjustments */
+  .submit-suggestion-form label {
+    font-size: 0.9rem; /* Smaller font for labels */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    width: 100%; /* Full-width inputs */
+    font-size: 0.9rem; /* Adjust input font size */
+    padding: 0.5rem; /* Reduce padding */
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    height: 80px; /* Compact text area */
+  }
+
+  button {
+    width: 100%; /* Full-width button */
+    padding: 0.5rem; /* Compact button */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  /* Agreement Checkbox */
+  .submit-suggestion-agreement-label {
+    font-size: 0.85rem; /* Smaller font for agreement text */
+    flex-direction: column; /* Stack checkbox and text */
+    align-items: flex-start;
+    margin: 1rem 0;
+  }
+
+  .submit-suggestion-agreement-label input {
+    margin: 0 0 0.5rem; /* Adjust spacing */
+  }
+}

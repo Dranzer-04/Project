@@ -1,0 +1,214 @@
+/* General styling for the app */
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url('IMG_0590_2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid rgb(255, 208, 0);
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.login-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-buttons button {
+    flex: 1;
+    padding: 10px;
+    margin: 1%;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.tab-buttons .active-tab {
+    background-color: #000057;
+    color: #fff;
+}
+
+.login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 92%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000057;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #000066;
+}
+
+.sign-up-link { 
+    margin-top: 15px;
+}
+
+.sign-up-link a {
+    color: #000057;
+    text-decoration: none;
+}
+
+.sign-up-link a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Department and User Type dropdown style */
+.form-group.department, .form-group.user-type {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    margin-bottom: 15px;
+}
+
+.form-group.department label, .form-group.user-type label {
+    margin-bottom: 7px; /* Space between label and dropdown */
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.dropdown-container {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom dropdown arrow */
+.dropdown-container::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 35%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #000057;
+    pointer-events: none;
+}
+
+/* Focus and hover state for the dropdown */
+.dropdown:focus {
+    border-color: #000057;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Hover state for the dropdown */
+.dropdown:hover {
+    border-color: #000057;
+}
+
+/* Password requirements list */
+.password-requirements {
+    text-align: left;
+    font-size: 0.8em;
+    color: red;
+    margin-top: 5px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .App {
+        padding: 10px; /* Reduced padding for mobile */
+    }
+
+    .login-section {
+        margin-top: 20px;
+        padding: 20px; /* Further reduced padding */
+    }
+
+    .tab-buttons button {
+        font-size: 0.8rem; /* Smaller font for tabs */
+        padding: 8px;
+    }
+
+    .login-form label {
+        font-size: 0.85rem; /* Smaller labels */
+    }
+
+    .login-form input {
+        padding: 8px; /* Reduced input padding */
+    }
+
+    .login-form button {
+        padding: 10px;
+        font-size: 0.9rem; /* Adjusted button font size */
+    }
+
+    .password-requirements {
+        font-size: 0.7rem; /* Reduced font size for requirements */
+    }
+}

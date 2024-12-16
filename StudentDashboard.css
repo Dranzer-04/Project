@@ -1,0 +1,666 @@
+* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Header Styles */
+/* General Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #003366;
+  color: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+  width: 50px;
+  margin-right: 1rem;
+}
+
+.header h1 {
+  flex-grow: 1;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color:  #003366;
+  margin: 0;
+}
+
+/* Menu Button for All Screens */
+.menu-button {
+  display: inline-block; 
+  width: 2%; 
+  padding: 0.5rem 1rem; 
+  background-color:  white; 
+  color: black; 
+  border: none; 
+  border-radius: 200px; 
+  font-size: 16px;
+  cursor: pointer; 
+  position: relative;
+  left: -80px;
+}
+
+.menu-button:hover {
+  background-color: #0056b3; 
+}
+
+.menu-button:hover {
+  background-color:  #003366;
+  color: white;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  background-color: white;
+  color: white;
+  width: 250px;
+  height: calc(100% - 80px); /* Adjust height to leave space for the header */
+  position: fixed;
+  top: 104px; /* Offset to avoid overlapping the header (adjust as needed) */
+  right: -250px; /* Initially hidden for small screens */
+  transition: right 0.3s;
+  z-index: 1000;
+ 
+}
+
+.dashboard-sidebar.open {
+  right: 0; /* Slide in on toggle */
+}
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  background-color: #00509e;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px; /* Reserve space for sidebar on larger screens */
+  padding: 1rem;
+  flex-grow: 1;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block; /* Show menu button for small screens */
+  }
+
+  .dashboard-sidebar {
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+    top: 0;
+  }
+
+  .main-content {
+    margin-left: 0; /* Allow full width for content on small screens */
+  }
+}
+
+/* Profile Section */
+.profile-section {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000080;
+  margin-bottom: 0.5rem;
+}
+
+.profile-department {
+  color: #6b7280;
+}
+
+/* Complaints Section */
+.complaints-section {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #000080;
+  margin-bottom: 1rem;
+}
+
+.complaints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.complaint-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.complaint-header {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: flex-start;
+}
+
+.complaint-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+}
+
+.complaint-title {
+  font-weight: 500;
+  color: #000080;
+}
+
+.complaint-id {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-resolved {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-unresolved {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.complaint-footer {
+  display: flex;
+  flex-direction: column; /* Stack all content vertically */
+  gap: 1rem; /* Space between complaint details and feedback button */
+}
+
+.complaint-footer-info {
+  display: flex;
+  flex-direction: row; /* Horizontal alignment */
+  justify-content: flex-start;
+  gap: 2rem; /* Add spacing between each item */
+}
+
+.feedback-button-container {
+  display: flex;
+  justify-content: center; /* Center the button */
+  width: 100%;
+  margin-top: 10px;
+}
+
+.feedback-toggle-button {
+  padding: 0.5rem 1rem;
+  background-color: #000080;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.feedback-toggle-button:hover {
+  background-color: #020249;
+}
+
+/* No Feedback Message */
+.no-feedback-message {
+  padding: 0.5rem 1rem;
+  background-color: #000080;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Feedback section positioning */
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Make it as wide as the card */
+  padding: 10px;
+  border-top: 2px solid #ddd;
+  margin-top: 10px;
+}
+
+.feedback-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-item {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.feedback-item p {
+  margin: 5px 0;
+}
+
+/* Priority Badge Color */
+.complaint-priority.priority-high {
+  background-color: #dc2626;
+}
+
+.complaint-priority.priority-medium {
+  background-color: #f97316;
+}
+
+.complaint-priority.priority-low {
+  background-color: #059669;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .complaint-footer-info {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .complaint-footer-info p {
+    flex: none; /* Prevent text from stretching */
+    margin-bottom: 0.5rem;
+  }
+
+  .complaint-footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-button {
+    display: inline-block; 
+    width: 2%; 
+    padding: 0.5rem 1rem; 
+    background-color:  white; 
+    color: black; 
+    border: none; 
+    border-radius: 200px; 
+    font-size: 16px;
+    cursor: pointer; 
+    position: center;
+    left: -80px;
+  }
+  
+  .menu-button:hover {
+    background-color: #0056b3; 
+  }
+  
+  .menu-button:hover {
+    background-color:  #003366;
+    color: white;
+  }
+  /* Sidebar Adjustments */
+  .dashboard-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80%; /* Sidebar takes 80% of the screen */
+    z-index: 10;
+    transform: translateX(-100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in */
+    background-color: white;
+    overflow-y: auto; /* Ensure scroll if content exceeds screen height */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dashboard-sidebar.open {
+    transform: translateX(0); /* Slide in when open */
+  }
+
+  /* Main content adjusts */
+  .dashboard-main {
+    margin-left: 0; /* Remove margin when sidebar is hidden */
+    flex-direction: column; /* Stack content vertically */
+  }
+
+  /* Header adjustments */
+  .header-content {
+    display: flex;
+  flex-direction: row; /* Default for larger screens: elements side by side */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Vertically align items */
+  padding: 1rem 2rem;
+  background-color: #f8f9fa; /* Light background for the header */
+  text-align: right; /* Default text alignment */
+  padding-left: 1rem;
+}
+
+  .dashboard-title {
+    font-size: 1.5rem; /* Slightly reduce title size */
+    margin: 0.5rem 0;
+  }
+
+  /* Main content layout */
+  .main-content {
+    padding: 1rem;
+    width: 100%; /* Full width on small screens */
+  }
+
+  .content-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 1rem;
+  }
+
+  /* Complaints Section Adjustments */
+  .complaints-list {
+    gap: 0.75rem; /* Smaller spacing between cards */
+  }
+
+  .complaint-card {
+    padding: 0.75rem; /* Reduce padding */
+    font-size: 0.875rem; /* Smaller text for compact look */
+  }
+
+  .complaint-header {
+    flex-direction: column; /* Stack title and info */
+    align-items: flex-start; /* Align to the left */
+  }
+
+  .complaint-info {
+    margin-bottom: 0.5rem; /* Add spacing below */
+  }
+
+  /* Priority Badge Adjustments */
+  .complaint-priority {
+    padding: 0.25rem 0.5rem; /* Reduce padding */
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  /* Feedback Button */
+  .feedback-toggle-button {
+    width: 100%; /* Full width button */
+    padding: 0.75rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .feedback-section {
+    padding: 0.5rem; /* Reduce padding for compactness */
+  }
+
+  .feedback-item {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+
+  /* Profile Section Adjustments */
+  .profile-content {
+    flex-direction: column; /* Stack profile elements */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Align text to center */
+  }
+
+  .profile-image {
+    width: 4rem; /* Reduce profile image size */
+    height: 4rem;
+  }
+
+  .profile-name {
+    font-size: 1rem; /* Adjust name size */
+    margin-top: 0.5rem;
+  }
+
+  .profile-department {
+    font-size: 0.875rem;
+  }
+
+  /* Header Navigation */
+  .nav-link {
+    font-size: 1rem; /* Larger font for usability */
+    padding: 0.75rem 1rem;
+  }
+
+  /* Toggle Button for Sidebar */
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20; /* Ensure it stays on top */
+    padding: 0.5rem 1rem;
+    background-color: #000080;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  .sidebar-toggle:hover {
+    background-color: #020249;
+  }
+}
+
+/* Sidebar Styles for Smaller Devices */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%; /* Adjust sidebar width for smaller screens */
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it stays on top of other content */
+    transform: translateX(-100%); /* Initially hidden */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+
+  .dashboard-sidebar.open {
+    transform: translateX(0); /* Slide-in when open */
+  }
+
+  .sidebar-nav {
+    padding: 1rem;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: #000080;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-link:hover {
+    background-color: rgb(255, 208, 0);
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .submit-suggestion {
+    background-color: rgb(255, 208, 0);
+    color: #000080;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  .submit-suggestion:hover {
+    background-color: #ffc107;
+    color: #000;
+  }
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  padding: 0.5rem 1rem;
+  background-color: #000080;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+  background-color: #020249;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  /* Tablet Styles */
+  .menu-button {
+    display: block;
+  }
+
+  .dashboard-sidebar {
+    position: fixed;
+    left: -250px;
+  }
+
+  .dashboard-sidebar.open {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0; /* Content takes full width */
+  }
+
+  .profile-section,
+  .complaints-section {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile Styles */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between elements */
+    padding: 1rem;
+    position: fixed;
+    background-color: #ffffff;
+  }
+  
+  .header h1 {
+    font-size: 1rem;
+    flex-grow: 1;
+    text-align: center; /* Center the text */
+    margin: 0; /* Remove extra margin */
+ }
+  
+  .header .logo {
+    width: 60px; /* Adjust logo size for smaller screens */
+    margin-right: 70px; /* Space between the logo and text */
+  }
+  
+  .menu-button {
+    font-size: 0.875rem;
+    width: 120px;
+    height: 40px;
+    padding: 1.6rem;
+    background-color: white; /* Ensure visibility with a background color */
+    color: black; /* Text color */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border-radius: 30%;
+    cursor: pointer;
+    position: relative; /* Change to relative for better placement inside flexbox */
+    margin-left: 150px; /* Push the button to the far right */
+    right: 100%;
+  }
+  .menu-button:hover {
+    background-color: #002244; /* Darker background on hover */
+  }
+
+ .dashboard-sidebar {
+    width: 200px;
+  }
+
+  .profile-section,
+  .complaints-section {
+    padding: 1rem;
+  }
+
+  .complaint-card {
+    padding: 0.75rem;
+  }
+
+  .status-badge {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}
